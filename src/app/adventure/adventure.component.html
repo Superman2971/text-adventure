@@ -1,0 +1,9 @@
+<div class="adventure">
+  <div class="box">
+    <div *ngIf="currentRoom.left" class="left" (click)="testing(currentRoom.left)">{{currentRoom.left.description || currentRoom.left}}</div>
+    <div *ngIf="currentRoom.top" class="top" (click)="testing(currentRoom.top)">{{currentRoom.top.description || currentRoom.top}}</div>
+    <div *ngIf="currentRoom.right" class="right" (click)="testing(currentRoom.right)">{{currentRoom.right.description || currentRoom.right}}</div>
+    <div *ngIf="currentRoom.bottom" class="bottom" (click)="testing(currentRoom.bottom)">{{currentRoom.bottom.description || currentRoom.bottom}}</div>
+    <div class="text">{{currentRoom.description}}</div>
+  </div>
+</div>
