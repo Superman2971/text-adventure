@@ -4,12 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+<<<<<<< HEAD
 import { AdventureComponent } from './adventure/adventure.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdventureComponent
+=======
+
+@NgModule({
+  declarations: [
+    AppComponent
+>>>>>>> 35ab61ec2525bf7015ec6c62ebab61e3813b791f
   ],
   imports: [
     BrowserModule,
