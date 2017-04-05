@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AdventureComponent } from './adventure/adventure.component';
+import { PlayComponent } from './play/play.component';
 import { CreateComponent } from './create/create.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
@@ -13,6 +14,9 @@ import { AboutComponent } from './about/about.component';
 const appRoutes: Routes = [{
     path: '',
     component: AdventureComponent
+  }, {
+    path: 'play',
+    component: PlayComponent
   }, {
     path: 'create',
     component: CreateComponent
@@ -28,6 +32,7 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     AdventureComponent,
+    PlayComponent,
     CreateComponent,
     NavbarComponent,
     AboutComponent
