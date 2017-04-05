@@ -6,12 +6,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AdventureComponent } from './adventure/adventure.component';
+import { CreateComponent } from './create/create.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [{
     path: '',
     component: AdventureComponent
+  }, {
+    path: 'create',
+    component: CreateComponent
   }, {
     path: 'about',
     component: AboutComponent
@@ -24,6 +28,7 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     AdventureComponent,
+    CreateComponent,
     NavbarComponent,
     AboutComponent
   ],

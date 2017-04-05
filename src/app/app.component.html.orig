@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-<div class="app">
-  <app-adventure></app-adventure>
-</div>
-=======
-<h1>
-  {{title}}
-</h1>
->>>>>>> 35ab61ec2525bf7015ec6c62ebab61e3813b791f

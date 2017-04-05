@@ -1,0 +1,11 @@
+<div class="create">
+  <div *ngIf="showMap">
+    <div>Map Overview</div>
+    <div class="map-container">
+      <div class="square" *ngFor="let room of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]; let i = index" (mouseenter)="hovering = 'Room ' + i" (mouseleave)="hovering = false"></div>
+    </div>
+    <div *ngIf="hovering">Click to edit: {{hovering}}</div>
+    <div>Should show room info when hovering room</div>
+  </div>
+  <div *ngIf="!showMap">THEN A HIDDEN SECTION THAT SHOWS WHEN YOU CLICK A LITTLE BOX</div>
+</div>
