@@ -7,56 +7,97 @@ import { Component } from '@angular/core';
 })
 export class AdventureComponent {
 
-  // sample room:
-      // description: 'description',
-      // left: {
-      //   goTo: 'room',
-      //   description: 'door'
-      // },
-      // top: {
-      //   goTo: 'room',
-      //   description: 'door'
-      // },
-      // right: {
-      //   goTo: 'room',
-      //   description: 'door'
-      // },
-      // bottom: {
-      //   goTo: 'room',
-      //   description: 'door'
-      // }
+  // SAMPLE ROOM
+  // description: 'description',
+  // image: '',
+  // character: {
+  //   name: '',
+  //   health: 10,
+  //   inventory: {
+  //     key1: true,
+  //     key2: false,
+  //     weapon1: true,
+  //     itemName: true
+  //   }
+  // }
+  // west: {
+  //   goTo: 'room',
+  //   label: 'door',
+  //   monster: {
+  //     name: '',
+  //     damage: 2,
+  //     speed: 0.5,
+  //     health: '',
+  //     fightSpeech: '',
+  //     deathSpeech: ''
+  //   },
+  //   actions: {
+  //     buttons: [{
+  //       requiredItem: '', // for use to disable button unless they have an item
+  //       // don't neglect to add a hover info to describe what item is needed
+  //       label: '',
+  //       clicked: {
+  //         goTo: '', // for use with run or leave
+  //         addToInventory: '', // for use with Take Item of whatever name
+  //         initFight: true // for use to start monster fights
+  //       }
+  //     }]
+  //   },
+  //   input: { // input text box with a question
+  //     questions: '',
+  //     answer: '',
+  //     incorrectResponses: [''],
+  //     resolve: {
+  //       goTo: '',
+  //       addToInventory: ''
+  //     }
+  //   }
+  // },
+  // north: {
+  //   goTo: 'room',
+  //   label: 'door'
+  // },
+  // east: {
+  //   label: 'door',
+  //   description: 'added text to showcase at a dead end with no goTo'
+  // },
+  // south: {
+  //   goTo: 'room',
+  //   label: 'door'
+  // }
 
   testGame: any = {
     entrance: {
       description: 'You are standing outside. Nothing to do here but go inside.',
-      top: {
+      north: {
         goTo: 'firstRoom',
-        description: 'door'
+        label: 'door'
       },
-      bottom: {
-        description: 'A path going literally nowhere.'
+      south: {
+        label: 'A path going literally nowhere.'
       }
     },
     firstRoom: {
       description: 'Room 1.',
-      left: {
+      west: {
         goTo: 'secondRoom',
-        description: 'door'
+        label: 'door'
       },
-      top: 'TOP',
-      right: {
-        description: 'window'
+      north: 'north',
+      east: {
+        label: 'window',
+        description: 'You look outside and see a beautiful mountain side.'
       },
-      bottom: {
+      south: {
         goTo: 'entrance',
-        description: 'entrance'
+        label: 'entrance'
       }
     },
     secondRoom: {
       description: 'You are now in the broom closet. Nice work.',
-      right: {
+      east: {
         goTo: 'firstRoom',
-        description: 'door'
+        label: 'door'
       }
     }
   };
