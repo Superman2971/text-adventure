@@ -9,7 +9,7 @@
   width: 400px;
 
   .map-container {
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -21,6 +21,19 @@
       cursor: pointer;
       height: 40px;
       width: 40px;
+
+      &.active {
+        background-color: #fff;
+      }
     }
+  }
+
+  .close {
+    color: blue;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    right: 8px;
+    top: 8px;
   }
 }

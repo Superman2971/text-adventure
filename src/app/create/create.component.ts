@@ -68,7 +68,17 @@ export class CreateComponent {
 
   showMap = true;
   editRoom = {};
+  emptyGame = {
+    gameName: '',
+    gameId: (Math.random() * 100000000000),
+    gameBoard: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+  };
 
   constructor() {}
 
+  editThisRoom(room) {
+    this.showMap = false;
+    this.editRoom = room
+  }
 }
