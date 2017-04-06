@@ -8,8 +8,17 @@
     <div>Should show room info when hovering room</div>
   </div>
   <div *ngIf="!showMap">
-    <div class="close" (click)="showMap = !showMap">Close</div>
-    <input type="text" placeholder="Room Name" #name (keyup)="editRoom.name = name.value"/>
+    <div class="close" (click)="saveMap()">Close</div>
     <div>{{editRoom.name}}</div>
+    <input type="text" placeholder="Room Name" #name (keyup)="editRoom.name = name.value"/>
+    <input type="text" placeholder="Room Description" #description (keyup)="editRoom.description = description.value"/>
+    <input type="text" placeholder="west label" #westLabel (keyup)="editRoom.west.label = westLabel.value"/>
+    <input type="text" placeholder="west Description" #westDescription (keyup)="editRoom.west.description = westDescription.value"/>
+    <input type="text" placeholder="north label" #northLabel (keyup)="editRoom.north.label = northLabel.value"/>
+    <input type="text" placeholder="north Description" #northDescription (keyup)="editRoom.north.description = northDescription.value"/>
+    <input type="text" placeholder="east label" #eastLabel (keyup)="editRoom.east.label = eastLabel.value"/>
+    <input type="text" placeholder="east Description" #eastDescription (keyup)="editRoom.east.description = eastDescription.value"/>
+    <input type="text" placeholder="south label" #southLabel (keyup)="editRoom.south.label = southLabel.value"/>
+    <input type="text" placeholder="south Description" #southDescription (keyup)="editRoom.south.description = southDescription.value"/>
   </div>
 </div>

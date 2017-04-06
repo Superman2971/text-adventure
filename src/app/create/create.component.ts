@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-create',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class CreateComponent {
 
-  // SAMPLE ROOM
+  // SAMPLE GAME/ROOM OBJECT
   // description: 'description',
   // image: '',
   // character: {
@@ -75,10 +76,15 @@ export class CreateComponent {
     {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
   };
 
-  constructor() {}
+  constructor(private GameService:GameService) {}
 
   editThisRoom(room) {
     this.showMap = false;
     this.editRoom = room
+  }
+
+  saveMap() {
+    this.showMap = true;
+    this.GameService.setGame(this.emptyGame);
   }
 }

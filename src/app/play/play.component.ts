@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from '../create/game.service';
 
 @Component({
   selector: 'app-play',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./play.component.scss']
 })
 export class PlayComponent {
-  constructor() {}
+
+  constructor(private GameService:GameService) {}
+
+  game = this.GameService.game;
 }

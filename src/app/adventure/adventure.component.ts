@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GameService } from '../create/game.service';
 
 @Component({
   selector: 'app-adventure',
   templateUrl: './adventure.component.html',
   styleUrls: ['./adventure.component.scss']
 })
-export class AdventureComponent {
+export class AdventureComponent implements OnInit {
 
   // SAMPLE ROOM
   // description: 'description',
@@ -104,7 +105,11 @@ export class AdventureComponent {
   previousRoom: any = {};
   currentRoom: any = this.testGame.firstRoom;
 
-  constructor() {}
+  constructor(private GameService:GameService) {}
+
+  ngOnInit() {
+    console.log(this.GameService.game);
+  }
 
   goBack() {
     this.currentRoom = this.previousRoom;

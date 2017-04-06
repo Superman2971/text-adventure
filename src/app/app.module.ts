@@ -10,6 +10,10 @@ import { PlayComponent } from './play/play.component';
 import { CreateComponent } from './create/create.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
+// Services
+import { Broadcaster } from './broadcaster.service';
+import { NavbarService } from './navbar/navbar.service';
+import { GameService } from './create/game.service';
 
 const appRoutes: Routes = [{
     path: '',
@@ -43,7 +47,11 @@ const appRoutes: Routes = [{
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    Broadcaster,
+    NavbarService,
+    GameService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
