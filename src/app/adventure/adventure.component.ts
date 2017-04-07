@@ -109,6 +109,11 @@ export class AdventureComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.GameService.game);
+
+    if (this.GameService.game) {
+      this.testGame = this.GameService.game;
+      this.currentRoom = this.GameService.game.gameBoard[0];
+    }
   }
 
   goBack() {

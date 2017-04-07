@@ -4,7 +4,14 @@ import { Injectable } from '@angular/core';
 export class GameService {
   constructor() {}
 
-  game = {};
+  emptyGame = {
+    gameName: '',
+    gameId: (Math.random() * 100000000000000),
+    gameBoard: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
+    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
+  };
+
+  game;
 
   setGame(game) {
     this.game = game;

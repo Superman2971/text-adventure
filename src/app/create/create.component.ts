@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GameService } from './game.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { GameService } from './game.service';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit {
 
   // SAMPLE GAME/ROOM OBJECT
   // description: 'description',
@@ -68,23 +68,32 @@ export class CreateComponent {
   // }
 
   showMap = true;
-  editRoom = {};
-  emptyGame = {
-    gameName: '',
-    gameId: (Math.random() * 100000000000),
-    gameBoard: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
-    {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
-  };
+  editRoom: any;
+  game:any;
 
   constructor(private GameService:GameService) {}
 
   editThisRoom(room) {
     this.showMap = false;
-    this.editRoom = room
+    this.editRoom = room;
+    if (!this.editRoom.west) {
+      this.editRoom.west = {};
+      this.editRoom.north = {};
+      this.editRoom.east = {};
+      this.editRoom.south = {};
+    }
   }
 
   saveMap() {
     this.showMap = true;
-    this.GameService.setGame(this.emptyGame);
+    this.GameService.setGame(this.game);
+  }
+
+  ngOnInit() {
+    if (this.GameService.game) {
+      this.game = this.GameService.game;
+    } else {
+      this.game = this.GameService.emptyGame;
+    }
   }
 }
