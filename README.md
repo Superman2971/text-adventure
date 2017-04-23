@@ -1,31 +1,29 @@
 # TextAdventure
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+## To Do List
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Room functions / Types**
+- basic room has 4 directions (maybe labeled), a description, maybe an image
+- input action rooms (input boxes with multiple responses based on text you submit...should it also possible give player items? Solve a riddle?)
+- button action rooms (buttons that cause functions...need to know the functions)
+    - fight, run, take, leave, ... (can format these exactly like the directions with either function or example leave would have a goTo)
+- dead end, something like a window...I don't think you should leave the current room. Maybe a sentence appears under the room description or a modal or alert.
+- locked doors and keys
+- monsters and fighting
 
-## Code scaffolding
+1) should make a quick create room (just the beginning so I have an object to play with)
+2) create a service that I can then use to temp store the object for playing
+3) create a play component that has that game implemented for play
+4) then upgrade the creation tool || begin the save tool
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+**later: create a board/mapping environment for the Create page which is infinite.**
+How I think I can do it:
+- square box with overflow scroll
+- initial room given position absolute at the middle (100x100)
+- then every time a room is generated you automate the goTo for the appropriate door && automatically generate and save the new coordinates to the map. For example if you build a northern room and all rooms are 40x40 it saves positionX 100 positionY 140 and is placed absolutely on the map.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+From Phone
+- add save game, use url params. Including game ID, room ID, and if including any items IDs to save what the character has in inventory (this method requires no database for the saves...but maybe I do gameID storage with the associated database storage dump)
+- make homepage super simple with 3 states. Creation, game, about, maybe also a page for find a game (to search game database).
+- add function for doors locking behind you
+- add counter function inventory items. AKA you get one of x every y seconds
